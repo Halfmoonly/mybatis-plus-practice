@@ -1,1 +1,1 @@
-# mybatis-practice
+# mybatis-plus-practice
