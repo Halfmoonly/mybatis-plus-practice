@@ -1,8 +1,11 @@
 package org.lyflexi.debug_mybatis.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.lyflexi.debug_mybatis.dao.UserMapper;
-import org.lyflexi.debug_mybatis.entity.UserPo;
+import org.lyflexi.debug_mybatis.entity.po.UserPo;
+import org.lyflexi.debug_mybatis.entity.param.UserParam;
 import org.lyflexi.debug_mybatis.service.IUserService;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +15,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, UserPo> implements IUserService {
+
+    @Override
+    public IPage<UserPo> pageSearch(IPage<UserPo> page, UserParam param) {
+        return this.page(page,Wrappers.<UserPo>lambdaQuery().orderByDesc(UserPo::getId));
+    }
+
+    @Override
+    public Boolean delete(Long id) {
+        return this.removeById(id);
+    }
 }

@@ -1,7 +1,9 @@
 package org.lyflexi.debug_mybatis.controller;
 
-import org.lyflexi.debug_mybatis.entity.UserParam;
-import org.lyflexi.debug_mybatis.entity.UserPo;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import org.lyflexi.debug_mybatis.entity.UserForm;
+import org.lyflexi.debug_mybatis.entity.po.UserPo;
+import org.lyflexi.debug_mybatis.entity.param.UserParam;
 import org.lyflexi.debug_mybatis.service.IUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,26 +18,34 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private IUserService userService;
-    @RequestMapping(path = "/get/{userId}",method = RequestMethod.GET)
-    public UserPo getUser(@PathVariable Long userId)
-    {
-        return  userService.getById(userId);
+
+    @RequestMapping(path = "/get/{userId}", method = RequestMethod.GET)
+    public UserPo getUser(@PathVariable Long userId) {
+        return userService.getById(userId);
     }
 
-    @RequestMapping(path = "/update",method = RequestMethod.PUT)
-    public Boolean updateUser(@RequestBody UserParam param)
-    {
+    @RequestMapping(path = "/update", method = RequestMethod.PUT)
+    public Boolean updateUser(@RequestBody UserForm param) {
         UserPo userPo = new UserPo();
-        BeanUtils.copyProperties(param,userPo);
+        BeanUtils.copyProperties(param, userPo);
         return userService.updateById(userPo);
     }
 
-    @RequestMapping(path = "/add",method = RequestMethod.POST)
-    public void addUser(@RequestBody UserParam param)
-    {
+    @RequestMapping(path = "/add", method = RequestMethod.POST)
+    public Boolean addUser(@RequestBody UserForm param) {
         UserPo userPo = new UserPo();
-        BeanUtils.copyProperties(param,userPo);
-        userService.save(userPo);
+        BeanUtils.copyProperties(param, userPo);
+        return userService.save(userPo);
+    }
+
+    @RequestMapping(path = "/page", method = RequestMethod.POST)
+    public IPage<UserPo> page(@RequestBody UserParam param) {
+        return userService.pageSearch(param.getPage(), param);
+    }
+
+    @RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
+    public Boolean delete(@PathVariable Long id) {
+        return userService.delete(id);
     }
 
 

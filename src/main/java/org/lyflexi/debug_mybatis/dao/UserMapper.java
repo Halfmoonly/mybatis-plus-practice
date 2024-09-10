@@ -2,7 +2,7 @@ package org.lyflexi.debug_mybatis.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import org.lyflexi.debug_mybatis.entity.UserPo;
+import org.lyflexi.debug_mybatis.entity.po.UserPo;
 
 /**
  * @Author: ly

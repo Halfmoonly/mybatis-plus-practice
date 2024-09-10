@@ -1,5 +1,6 @@
-package org.lyflexi.debug_mybatis.entity;
+package org.lyflexi.debug_mybatis.entity.po;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -10,8 +11,11 @@ import lombok.Data;
 @Data
 //application.yml中的currentSchema=lyschema没有生效，原因未知
 @TableName("lyschema.user")
-public class UserPo {
+public class UserPo extends BasePo {
     Long id;
     String name;
+    String code;
     Integer age;
+    @TableLogic
+    Integer dataStatus;
 }
