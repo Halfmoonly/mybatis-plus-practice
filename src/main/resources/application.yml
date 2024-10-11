@@ -1,8 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://192.168.18.100:5432/LYDB?currentSchema=lyschema
-    username: ly_dev
-    password: ly_dev
+#    url: jdbc:postgresql://192.168.18.100:5432/LYDB?currentSchema=lyschema
+#    username: ly_dev
+#    password: ly_dev
+    url: jdbc:postgresql://10.43.138.190:5432/postgres?currentSchema=public
+    username: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
     #使用了hikari连接池
     hikari:

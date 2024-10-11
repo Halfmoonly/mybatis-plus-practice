@@ -17,14 +17,14 @@ class DebugMybatisApplicationTests {
 
     @Test
     public void updateById(){
-        UserPo user = iUserService.getById("1");
+        UserPo user = iUserService.getById(1L);
         int version = user.getVersion();
         user.setPassword("new password");
         user.setVersion(version);
         boolean b = iUserService.updateById(user);
         System.out.println("成功与否： "+b);
 
-        user = iUserService.getById("1");
+        user = iUserService.getById(1L);
         version = user.getVersion();
         user.setPassword("new password");
         user.setVersion(version);

@@ -160,7 +160,6 @@ public class YourEntity {
     // 其他字段...
 }
 ```
-单元测试：[DebugMybatisApplicationTests.java](src%2Ftest%2Fjava%2Forg%2Flyflexi%2Fdebug_mybatis%2FDebugMybatisApplicationTests.java)
 
 乐观锁字段注意事项：
 
@@ -168,3 +167,5 @@ public class YourEntity {
 - 对于整数类型，newVersion 是 oldVersion + 1。
 - newVersion 会自动回写到实体对象中。
 - 支持内置的 updateById(entity) 和 update(entity, wrapper), saveOrUpdate(entity), insertOrUpdate(entity) (version >=3.5.7) 方法。
+
+详细测试记录见：[Readme.md](docs%2Foptimistic%2FReadme.md)
