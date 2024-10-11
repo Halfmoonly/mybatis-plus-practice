@@ -1,4 +1,4 @@
-package org.lyflexi.debug_mybatis.entity;
+package org.lyflexi.debug_mybatis.entity.form;
 
 import lombok.Data;
 import org.lyflexi.debug_mybatis.entity.po.UserPo;

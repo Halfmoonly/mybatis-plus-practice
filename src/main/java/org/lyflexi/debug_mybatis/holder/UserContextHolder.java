@@ -2,7 +2,7 @@ package org.lyflexi.debug_mybatis.holder;
 
 
 
-import org.lyflexi.debug_mybatis.entity.LoginUserVo;
+import org.lyflexi.debug_mybatis.entity.vo.LoginUserVo;
 import org.lyflexi.debug_mybatis.config.LyFlexiConstant;
 
 import java.util.Objects;

@@ -1,7 +1,7 @@
 package org.lyflexi.debug_mybatis.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.lyflexi.debug_mybatis.entity.UserForm;
+import org.lyflexi.debug_mybatis.entity.form.UserForm;
 import org.lyflexi.debug_mybatis.entity.po.UserPo;
 import org.lyflexi.debug_mybatis.entity.param.UserParam;
 import org.lyflexi.debug_mybatis.service.IUserService;

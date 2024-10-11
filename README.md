@@ -127,3 +127,35 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     }
 }
 ```
+
+# 乐观锁插件
+Spring Boot 注解方式
+```java
+@Configuration
+@MapperScan("按需修改")
+public class MybatisPlusConfig {
+
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        interceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
+        return interceptor;
+    }
+}
+```
+在实体类中，需要在表示版本号的字段上添加 @Version 注解：
+```java
+import com.baomidou.mybatisplus.annotation.Version;
+
+public class YourEntity {
+    @Version
+    private Integer version;
+    // 其他字段...
+}
+```
+乐观锁字段注意事项：
+
+- 支持的数据类型包括：int, Integer, long, Long, Date, Timestamp, LocalDateTime。
+- 对于整数类型，newVersion 是 oldVersion + 1。
+- newVersion 会自动回写到实体对象中。
+- 支持内置的 updateById(entity) 和 update(entity, wrapper), saveOrUpdate(entity), insertOrUpdate(entity) (version >=3.5.7) 方法。

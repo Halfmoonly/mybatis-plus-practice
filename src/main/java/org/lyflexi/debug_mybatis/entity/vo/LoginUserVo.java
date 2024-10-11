@@ -1,4 +1,4 @@
-package org.lyflexi.debug_mybatis.entity;
+package org.lyflexi.debug_mybatis.entity.vo;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

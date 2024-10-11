@@ -1,7 +1,9 @@
 package org.lyflexi.debug_mybatis.entity.po;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 /**
@@ -18,4 +20,10 @@ public class UserPo extends BasePo {
     Integer age;
     @TableLogic
     Integer dataStatus;
+
+    @TableField(value = "password")
+    private String password;
+    @Version
+    @TableField(value = "version")
+    private Integer version;
 }

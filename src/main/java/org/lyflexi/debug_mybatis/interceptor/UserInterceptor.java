@@ -2,7 +2,7 @@ package org.lyflexi.debug_mybatis.interceptor;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.lyflexi.debug_mybatis.entity.LoginUserVo;
+import org.lyflexi.debug_mybatis.entity.vo.LoginUserVo;
 import org.lyflexi.debug_mybatis.holder.UserContextHolder;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

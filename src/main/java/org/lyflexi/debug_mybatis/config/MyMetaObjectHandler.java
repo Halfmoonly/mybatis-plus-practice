@@ -3,7 +3,7 @@ package org.lyflexi.debug_mybatis.config;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
-import org.lyflexi.debug_mybatis.entity.LoginUserVo;
+import org.lyflexi.debug_mybatis.entity.vo.LoginUserVo;
 import org.lyflexi.debug_mybatis.holder.UserContextHolder;
 import org.springframework.stereotype.Component;
 
