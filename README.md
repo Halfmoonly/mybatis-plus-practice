@@ -129,7 +129,14 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 ```
 
 # 乐观锁插件
-Spring Boot 注解方式
+当要更新一条记录时，希望这条记录没有被别人更新过。乐观锁实现方式：
+
+- 取出记录时，获取当前version。 
+- 更新时，带上这个version。 
+- 执行更新时， set version = newVersion where version = oldVersion。 
+- 如果version不对，就更新失败。
+
+接下来，我们来演示MyBatis-Plus的乐观锁插件。 Spring Boot 注解方式
 ```java
 @Configuration
 @MapperScan("按需修改")
