@@ -168,4 +168,4 @@ public class YourEntity {
 - newVersion 会自动回写到实体对象中。
 - 支持内置的 updateById(entity) 和 update(entity, wrapper), saveOrUpdate(entity), insertOrUpdate(entity) (version >=3.5.7) 方法。
 
-详细测试记录见：[Readme.md](docs%2Foptimistic%2FReadme.md)
+详细测试记录见：[Readme.md](docs%2Foptimistic/Readme.md)

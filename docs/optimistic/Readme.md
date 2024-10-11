@@ -1,7 +1,7 @@
 
 数据库初始状态，version=0
 
-![Snipaste_2024-10-11_16-16-37.png](pics%2FSnipaste_2024-10-11_16-16-37.png)
+![Snipaste_2024-10-11_16-16-37.png](pics/Snipaste_2024-10-11_16-16-37.png)
 
 测试请求：http://{{ip}}:{{port}}/user/optimistic/1 
 测试代码：模拟两次乐观锁更新
@@ -73,4 +73,4 @@ afterCompletion: 整个请求完成，可以进行资源清理
 ```
 执行两次乐观更新操作之后,version=2,满足预期
 
-![Snipaste_2024-10-11_16-16-48.png](pics%2FSnipaste_2024-10-11_16-16-48.png)
+![Snipaste_2024-10-11_16-16-48.png](pics/Snipaste_2024-10-11_16-16-48.png)
