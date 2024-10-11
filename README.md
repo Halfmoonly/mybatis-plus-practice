@@ -1,4 +1,10 @@
 # mybatis-plus-practice
+# pgsql环境准备
+postgresql默认情况下除本机外的机器是不能连接的，要想连接需要配置一下文件：
+
+路径：C:\Program Files\PostgreSQL\12\data\pg_hba.conf
+
+![Snipaste_2024-10-11_16-28-15.png](pics/Snipaste_2024-10-11_16-28-15.png)
 
 # 主启动类配置
 ```java
