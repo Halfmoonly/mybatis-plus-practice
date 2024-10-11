@@ -160,6 +160,8 @@ public class YourEntity {
     // 其他字段...
 }
 ```
+单元测试：[DebugMybatisApplicationTests.java](src%2Ftest%2Fjava%2Forg%2Flyflexi%2Fdebug_mybatis%2FDebugMybatisApplicationTests.java)
+
 乐观锁字段注意事项：
 
 - 支持的数据类型包括：int, Integer, long, Long, Date, Timestamp, LocalDateTime。
