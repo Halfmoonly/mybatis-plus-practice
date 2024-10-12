@@ -177,8 +177,8 @@ public class YourEntity {
 详细测试记录见：[Readme.md](optimistic-lock-plugin/Readme.md)
 
 
-# pgsql数据库自动分区
+# pgsql数据表自动分区
 
-表数据量过大会导致查询效率低下，这种情况可以利用数据库的表分区功能来解决，同时结合定时任务可以实现自动分区功能
+表数据量过大会导致查询效率低下，这种情况可以利用数据库的表分区功能来解决（触发器原理），同时结合定时任务可以实现自动分区功能
 
 详细见：[Readme.md](auto-partition-procedure/Readme.md)
