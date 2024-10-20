@@ -48,24 +48,4 @@ public class UserController {
         return userService.delete(id);
     }
 
-    @RequestMapping(path = "/optimistic/{id}", method = RequestMethod.GET)
-    public Boolean optimistic(@PathVariable Long id)
-    {
-        UserPo user = userService.getById(id);
-        int version = user.getVersion();
-        user.setPassword("new password");
-        user.setVersion(version);
-        boolean b = userService.updateById(user);
-        System.out.println("成功与否： "+b);
-
-        user = userService.getById(id);
-        version = user.getVersion();
-        user.setPassword("new password");
-        user.setVersion(version);
-        b = userService.updateById(user);
-        System.out.println("成功与否： "+b);
-
-        return true;
-    }
-
 }

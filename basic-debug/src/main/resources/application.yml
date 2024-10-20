@@ -1,21 +1,23 @@
 spring:
   datasource:
-#    url: jdbc:postgresql://192.168.18.100:5432/LYDB?currentSchema=lyschema
-#    username: ly_dev
-#    password: ly_dev
-    url: jdbc:postgresql://10.43.138.190:5432/postgres?currentSchema=public
-    username: postgres
-    password: root
+    # 数据库
+    url: jdbc:postgresql://192.168.18.100:5432/LYDB?currentSchema=lyschema&useSSL=false&autoReconnect=true
+    username: ly_dev
+    password: ly_dev
     driver-class-name: org.postgresql.Driver
-    #使用了hikari连接池
-    hikari:
-      maximum-pool-size: 20
+    # 连接池-初始化大小
+    initial-size: 10
+    # 连接池-最大连接数
+    max-active: 100
+    # 最大等待时间
+    max-wait: 60000
+    # 连接池-最小空闲数
+    min-idle: 10
+    # 检测空闲连接
+    test-while-idle: true
+    # 最小空闲时间
+    min-evictable-idle-time-millis: 300000
 
-  jpa:
-    properties:
-      hibernate:
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
 
 mybatis-plus:
   configuration:

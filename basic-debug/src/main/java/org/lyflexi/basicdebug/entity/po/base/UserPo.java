@@ -12,7 +12,7 @@ import lombok.Data;
  */
 @Data
 //application.yml中的currentSchema=lyschema没有生效，原因未知
-@TableName("public.user")
+@TableName("lyschema.user")
 public class UserPo extends BasePo {
     Long id;
     String name;
@@ -20,10 +20,4 @@ public class UserPo extends BasePo {
     Integer age;
     @TableLogic
     Integer dataStatus;
-
-    @TableField(value = "password")
-    private String password;
-    @Version
-    @TableField(value = "version")
-    private Integer version;
 }

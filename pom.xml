@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.9</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.lyflexi</groupId>
@@ -27,9 +27,9 @@
         <jol.core.version>0.9</jol.core.version>
         <javapoet.version>1.11.1</javapoet.version>
         <itranswarp.version>1.0</itranswarp.version>
-        <postgresql.version>42.3.3</postgresql.version>
-        <mybatis-plus-boot-starter.version>3.5.6</mybatis-plus-boot-starter.version>
-        <mybatis-spring.version>3.0.3</mybatis-spring.version>
+        <postgresql.version>42.6.2</postgresql.version>
+        <mybatis-plus-boot-starter.version>3.5.5</mybatis-plus-boot-starter.version>
+<!--        <mybatis-spring.version>3.0.3</mybatis-spring.version>-->
     </properties>
     <dependencies>
         <dependency>
@@ -78,41 +78,24 @@
 
         <!-- PostgreSQL Driver -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- MyBatis-Plus Spring Boot Starter -->
-        <!--
-            mybatis-plus-boot-starter中自带的mybatis-spring版本太低，和springboot3.2.1不兼容，需要升级mybatis-spring版本
-            error不兼容提示：Invalid value type for attribute ‘factoryBeanObjectType‘: java.lang.String
-         -->
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot-starter.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.mybatis</groupId>
-                    <artifactId>mybatis-spring</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>${mybatis-spring.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
             <version>2.0.21</version>
         </dependency>
+        <!-- Druid组件 -->
+
     </dependencies>
 
     <build>
