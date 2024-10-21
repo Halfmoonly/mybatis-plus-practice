@@ -21,7 +21,6 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/*.xml # 如果有Mapper XML文件的话
-  type-aliases-package: org.lyflexi.debug_mybatis.entity # 实体类包路径
   global-config:
     db-config:
       logic-delete-field: data_status # 全局逻辑删除字段名
