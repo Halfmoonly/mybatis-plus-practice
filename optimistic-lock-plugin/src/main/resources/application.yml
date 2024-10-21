@@ -3,18 +3,12 @@ spring:
     #    url: jdbc:postgresql://192.168.18.100:5432/LYDB?currentSchema=lyschema
     #    username: ly_dev
     #    password: ly_dev
-    #9.4 及以后的版本指定方式
     url: jdbc:postgresql://10.43.138.190:5432/postgres?currentSchema=optimistic
     username: postgres
     password: root
     driverClassName: org.postgresql.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
-  jpa:
-    properties:
-      hibernate:
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
 
 mybatis-plus:
   configuration:
