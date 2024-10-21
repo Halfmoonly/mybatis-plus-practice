@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.9</version>
+        <version>3.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.lyflexi</groupId>
@@ -29,6 +29,7 @@
         <itranswarp.version>1.0</itranswarp.version>
         <postgresql.version>42.6.2</postgresql.version>
         <mybatis-plus-boot-starter.version>3.5.5</mybatis-plus-boot-starter.version>
+        <druid.version>1.2.21</druid.version>
 <!--        <mybatis-spring.version>3.0.3</mybatis-spring.version>-->
     </properties>
     <dependencies>
@@ -95,6 +96,12 @@
             <version>2.0.21</version>
         </dependency>
         <!-- Druid组件 -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
 
     </dependencies>
 
